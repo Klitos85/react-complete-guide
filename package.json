@@ -15,7 +15,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier:write": "npx prettier --write --single-quote --no-semi --jsx-single-quote .",
+    "prettier:check": "npx prettier --check --single-quote --no-semi --jsx-single-quote ."
   },
   "eslintConfig": {
     "extends": [
