@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './ExpenseForm.css'
 
 const ExpenseForm = () => {
+  // Three states
   const [enteredTitle, setEnteredTitle] = useState('')
   const [enteredAmount, setEnteredAmount] = useState('')
   const [enteredDate, setEnteredDate] = useState('')
@@ -14,29 +15,44 @@ const ExpenseForm = () => {
   })
 
   const titleChangeHandler = (event) => {
+    // Three states
     setEnteredTitle(event.target.value)
     // Only one state
     setUserInput({
       ...userInput,
       enteredTitle: event.target.value,
     })
+    // One state with previous state
+    setUserInput((prevState) => {
+      return { ...prevState, enteredTitle: event.target.value }
+    })
   }
 
   const amountChangeHandler = (event) => {
+    // Three states
     setEnteredAmount(event.target.value)
     // Only one state
     setUserInput({
       ...userInput,
       enteredAmount: event.target.value,
     })
+    // One state with previous state
+    setUserInput((prevState) => {
+      return { ...prevState, enteredAmount: event.target.value }
+    })
   }
 
   const dateChangeHandler = (event) => {
+    // Three states
     setEnteredDate(event.target.value)
     // Only one state
     setUserInput({
       ...userInput,
       enteredDate: event.target.value,
+    })
+    // One state with previous state
+    setUserInput((prevState) => {
+      return { ...prevState, enteredDate: event.target.value }
     })
   }
 
