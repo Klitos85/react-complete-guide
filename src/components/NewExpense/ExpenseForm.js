@@ -8,56 +8,68 @@ const ExpenseForm = () => {
   const [enteredDate, setEnteredDate] = useState('')
 
   // Only one state
-  const [userInput, setUserInput] = useState({
+  /*const [userInput, setUserInput] = useState({
     enteredTitle: '',
     enteredAmount: '',
     enteredDate: '',
-  })
+  })*/
 
   const titleChangeHandler = (event) => {
     // Three states
     setEnteredTitle(event.target.value)
     // Only one state
-    setUserInput({
+    /*setUserInput({
       ...userInput,
       enteredTitle: event.target.value,
-    })
+    })*/
     // One state with previous state
-    setUserInput((prevState) => {
+    /*setUserInput((prevState) => {
       return { ...prevState, enteredTitle: event.target.value }
-    })
+    })*/
   }
 
   const amountChangeHandler = (event) => {
     // Three states
     setEnteredAmount(event.target.value)
     // Only one state
-    setUserInput({
+    /*setUserInput({
       ...userInput,
       enteredAmount: event.target.value,
-    })
+    })*/
     // One state with previous state
-    setUserInput((prevState) => {
+    /*setUserInput((prevState) => {
       return { ...prevState, enteredAmount: event.target.value }
-    })
+    })*/
   }
 
   const dateChangeHandler = (event) => {
     // Three states
     setEnteredDate(event.target.value)
     // Only one state
-    setUserInput({
+    /*setUserInput({
       ...userInput,
       enteredDate: event.target.value,
-    })
+    })*/
     // One state with previous state
-    setUserInput((prevState) => {
+    /*setUserInput((prevState) => {
       return { ...prevState, enteredDate: event.target.value }
-    })
+    })*/
+  }
+
+  const submitHandler = (event) => {
+    event.preventDefault()
+
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate),
+    }
+
+    console.log(expenseData)
   }
 
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className='new-expense__controls'>
         <div className='new-expense__control'>
           <label>Title</label>
