@@ -8,52 +8,59 @@ const ExpenseForm = (props) => {
   const [enteredDate, setEnteredDate] = useState('')
 
   // Only one state
-  /*const [userInput, setUserInput] = useState({
+  /* const [userInput, setUserInput] = useState({
     enteredTitle: '',
     enteredAmount: '',
     enteredDate: '',
-  })*/
+  })
+  */
 
   const titleChangeHandler = (event) => {
     // Three states
     setEnteredTitle(event.target.value)
     // Only one state
-    /*setUserInput({
+    /* setUserInput({
       ...userInput,
       enteredTitle: event.target.value,
-    })*/
+    })
+    */
     // One state with previous state
-    /*setUserInput((prevState) => {
+    /* setUserInput((prevState) => {
       return { ...prevState, enteredTitle: event.target.value }
-    })*/
+    })
+    */
   }
 
   const amountChangeHandler = (event) => {
     // Three states
     setEnteredAmount(event.target.value)
     // Only one state
-    /*setUserInput({
+    /* setUserInput({
       ...userInput,
       enteredAmount: event.target.value,
-    })*/
+    })
+    */
     // One state with previous state
-    /*setUserInput((prevState) => {
+    /* setUserInput((prevState) => {
       return { ...prevState, enteredAmount: event.target.value }
-    })*/
+    })
+    */
   }
 
   const dateChangeHandler = (event) => {
     // Three states
     setEnteredDate(event.target.value)
     // Only one state
-    /*setUserInput({
+    /* setUserInput({
       ...userInput,
       enteredDate: event.target.value,
-    })*/
+    })
+    */
     // One state with previous state
-    /*setUserInput((prevState) => {
+    /* setUserInput((prevState) => {
       return { ...prevState, enteredDate: event.target.value }
-    })*/
+    })
+    */
   }
 
   const submitHandler = (event) => {
@@ -62,7 +69,7 @@ const ExpenseForm = (props) => {
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
-      date: new Date(enteredDate),
+      date: new Date(enteredDate)
     }
 
     props.onSaveExpenseData(expenseData)
@@ -105,7 +112,9 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className='new-expense__actions'>
-        <button type='button' onClick={props.onCancel}>Cancel</button>
+        <button type='button' onClick={props.onCancel}>
+          Cancel
+        </button>
         <button type='submit'>Add Expense</button>
       </div>
     </form>
